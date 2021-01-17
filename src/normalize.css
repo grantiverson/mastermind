@@ -1,0 +1,52 @@
+/*==============================
+// NORMALIZE CSS
+//=============================*/
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+img,
+ul,
+li,
+footer,
+header,
+nav,
+section {
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+html {
+    font-family: sans-mono;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+}
+
+img {
+    max-width: 100%;
+}
