@@ -1,0 +1,752 @@
+// Responsive Design
+$break-small: 34rem;
+$break-large: 43.75rem;
+
+// Fonts
+$serif-font-stack: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text",
+    "Times New Roman", serif;
+$mono-font-stack: monaco, "Andale Mono", monospace;
+
+// Colors
+$dark-background-color: #282c34;
+$light-body-color: #fafafa;
+$light2-body-color: #e0e8f0;
+$lighter-dark-background-color: #3d4350;
+$nav-color: #6e6e6e;
+$accent-background-color: #22bcf0;
+$hover-nav-color: #22bcf0;
+
+// Font Colors
+$main-text-color: #999;
+$link-text-color: #abb2bf;
+$accent-color: #22bcf0;
+$dark-text-color: #302f2f;
+$light-text-color: #fafafa;
+$css-text-color: #98c379;
+
+// Shadow Colors
+$light-bg-shadow-color: #aaa;
+$dark-bg-shadow-color: #000;
+
+// Other
+$content-max-width: 73.8125rem;
+
+//==============================
+// GLOBAL STYLES
+//==============================/
+
+body {
+    background-color: $dark-background-color;
+    margin: 0;
+}
+
+// Sets page content width
+section * {
+    margin: 0 auto;
+    max-width: $content-max-width;
+}
+
+//==============================
+// ACCESSABILITY
+//==============================/
+
+*:focus {
+    outline-color: $hover-nav-color;
+    outline-width: 0.1875rem;
+}
+
+//==============================
+// TEXT
+//==============================/
+
+h1 {
+    color: $accent-color;
+    font-family: $mono-font-stack;
+    font-size: 7vw;
+    font-weight: 100;
+    margin: -0.375rem 0 0.125rem;
+}
+
+h2 {
+    color: $light-text-color;
+    font-family: $mono-font-stack;
+    font-size: 3.2vw;
+    font-weight: 100;
+}
+
+#title {
+    margin-left: 4.5vw;
+}
+
+.css-value-text-span {
+    color: $css-text-color;
+}
+
+h3 {
+    font-family: $serif-font-stack;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+h4 {
+    font-family: $serif-font-stack;
+    font-size: 1.5rem;
+    padding-bottom: 0.125rem;
+}
+
+p {
+    color: $main-text-color;
+    font-family: $mono-font-stack;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+a {
+    background-color: transparent;
+    color: inherit;
+
+    &:hover {
+        text-decoration: underline $accent-color;
+    }
+}
+
+ul {
+    color: $dark-text-color;
+    font-family: $serif-font-stack;
+    list-style: none;
+}
+
+.light-text-span {
+    color: $light-text-color;
+}
+
+.dark-text-span {
+    color: $dark-text-color;
+}
+
+//==============================
+// HEADING
+//==============================/
+
+header {
+    position: relative;
+}
+
+//==============================
+// NAVIGATION
+//==============================/
+
+#nav-button {
+    margin: 0.25rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+nav {
+    display: none;
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+
+    ul {
+        list-style-type: none;
+        margin-left: 0;
+        padding: 1.25rem;
+
+        li {
+            padding: 0.5rem 0.5rem 0;
+
+            a {
+                color: $link-text-color;
+                display: block;
+
+                &:hover {
+                    border-bottom: 0.1875rem solid $hover-nav-color;
+                    margin-bottom: -0.1875rem;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+//======== END OF GLOBAL STYLES ========/
+
+//==============================
+// PAGES
+//==============================/
+
+section {
+    padding: 4rem 1rem;
+}
+
+.dark-page {
+    background-color: $dark-background-color;
+
+    h3 {
+        color: $light-text-color;
+    }
+
+    h4 {
+        border-bottom: 0.0625rem solid $light-text-color;
+        padding: 0.625rem;
+    }
+
+    p {
+        color: $main-text-color;
+        padding: 0.625rem;
+    }
+}
+
+.light-page {
+    background-color: $light-body-color;
+
+    h3,
+    p {
+        color: $dark-text-color;
+    }
+
+    h4 {
+        border-bottom: 0.0625rem solid $dark-text-color;
+    }
+}
+
+.light2-page {
+    background-color: $light2-body-color;
+    padding-bottom: 6.875rem;
+
+    h3,
+    h4,
+    p {
+        color: $dark-text-color;
+    }
+
+    h4 {
+        border-bottom: 0.0625rem solid $dark-text-color;
+    }
+}
+
+//==============================
+// PAGE: INTRODUCTION;
+//==============================/
+
+#introduction {
+    height: 100vh;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+}
+
+#introduction-content {
+    display: inline-block;
+    margin-top: 40vh;
+}
+
+#introduction-text {
+    display: inline-block;
+    text-align: left;
+}
+
+#logo {
+    float: left;
+    margin: 0 0.5rem 0 0;
+    width: 18vw;
+}
+
+#teaser {
+    margin-top: 10vh;
+}
+
+#arrow {
+    width: 2rem;
+}
+
+//==============================
+// PAGE: ABOUT;
+//==============================/
+
+#about-txt {
+    overflow: hidden;
+    text-align: justify;
+    text-justify: inter-word;
+
+    p {
+        color: $main-text-color;
+    }
+}
+
+.indent {
+    margin-bottom: 1rem;
+    text-indent: 1rem;
+}
+
+//==============================
+// PAGE: SKILLS;
+//==============================/
+
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.skills-list-category {
+    background-color: $light-body-color;
+    box-shadow: 0.0625rem 0.125rem 0.125rem $light-bg-shadow-color;
+    margin: 0 auto 2.5rem;
+    padding: 1rem;
+    text-align: center;
+    transition: 0.25s ease;
+    width: 80%;
+
+    &:hover {
+        box-shadow: 0.25rem 0.5rem 0.625rem $light-bg-shadow-color;
+        transition: 0.25s ease;
+    }
+}
+
+.skills-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 18rem;
+}
+
+.skills-item {
+    float: left;
+    margin: 1rem 1rem 0;
+    text-align: center;
+}
+
+.skills-img {
+    height: 4.75rem;
+}
+
+//==============================
+// PAGE: PROJECTS;
+//==============================/
+
+#projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#projects-selector {
+    display: block;
+    font-size: 1.25rem;
+    padding-bottom: 1.25rem;
+
+    ul li {
+        display: block;
+        padding: 0;
+        text-align: center;
+        width: 7.25rem;
+
+        a {
+            color: $link-text-color;
+            display: block;
+            padding: 0.5rem 0 0.25rem;
+
+            &:hover {
+                border-bottom: 0.1875rem solid $hover-nav-color;
+                margin-bottom: -0.1875rem;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.active {
+    border-bottom: 0.1875rem solid $link-text-color;
+    margin-bottom: -0.1875rem;
+    text-decoration: none;
+}
+
+.projects-item {
+    background-color: $dark-background-color;
+    margin: 0.375rem 0;
+    overflow: hidden;
+    position: relative;
+
+    &:hover {
+        .projects-img {
+            transform: scale(1.1);
+        }
+
+        .projects-img,
+        .projects-skills-img {
+            opacity: 0.1;
+        }
+
+        .projects-item-details {
+            opacity: 1;
+        }
+    }
+}
+
+.projects-img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    transition: 0.25s ease;
+    width: auto;
+}
+
+.projects-item-details {
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.25s ease;
+    width: 90%;
+
+    h4 {
+        font-size: 1.75rem;
+    }
+}
+
+.projects-item-title {
+    color: $accent-color;
+    margin-top: 0.25rem;
+}
+
+.projects-skills-img-container {
+    bottom: 0;
+    position: absolute;
+    right: 0.5rem;
+}
+
+.projects-skills-img {
+    filter: drop-shadow(0.125rem 0.125rem 0.25rem $dark-bg-shadow-color);
+    height: 1.875rem;
+    transition: 0.25s ease;
+}
+
+.projects-skills-github {
+    bottom: 0.25rem;
+    color: $light-text-color;
+    filter: drop-shadow(0.125rem 0.125rem 0.25rem $dark-bg-shadow-color);
+    left: 0.5rem;
+    position: absolute;
+}
+
+//==============================
+// PAGE: CONTACT ME;
+//==============================/
+
+#contact-info {
+    margin: 2rem auto 0;
+    overflow: auto;
+    width: 12rem;
+}
+
+#contact-info-icons,
+#contact-info-text {
+    float: left;
+    padding: 0 0.25rem;
+}
+
+#contact-info-icons {
+    text-align: center;
+}
+
+.contact-text {
+    color: $accent-color;
+}
+
+#github-img {
+    filter: invert(100%);
+}
+
+//==============================
+// RETURN TO TOP BUTTON
+//==============================/
+
+.button {
+    background-color: $nav-color;
+    display: block;
+    font-family: $mono-font-stack;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0 1rem;
+    margin-top: 0.2rem;
+    padding: 0.375rem 0.25rem;
+    position: relative;
+    text-align: center;
+    transition: 0.25s ease;
+
+    &:hover {
+        box-shadow: 0.125rem 0.25rem 0.5rem $dark-bg-shadow-color;
+        color: $light-text-color;
+        text-decoration: none;
+        transition: 0.25s ease;
+    }
+}
+
+//==============================
+// FOOTER
+//==============================/
+
+footer {
+    margin: 0.625rem 0 1.25rem;
+    text-align: center;
+    width: 100%;
+
+    p {
+        text-align: center;
+    }
+}
+
+#footer-text {
+    margin: 1.25rem auto 0;
+}
+
+.vert-bar {
+    display: none;
+}
+
+//================================================================================/
+//     ========================================
+//     Screens with higher resolution than 34rem/544px
+//     ========================================/
+//================================================================================/
+
+@media screen and (min-width: $break-small) {
+    //==============================
+    // TEXT
+    //==============================/
+
+    h1 {
+        font-size: 2.375rem;
+        margin-top: -0.375rem;
+    }
+
+    h2 {
+        font-size: 1.08rem;
+    }
+
+    #title {
+        margin-left: 1.5rem;
+    }
+
+    h3 {
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    //==============================
+    // NAVIGATION
+    //==============================/
+
+    #nav-button,
+    #mini-nav {
+        display: none;
+    }
+
+    nav {
+        display: block;
+        float: right;
+        font-size: 1.25rem;
+        padding: 0;
+        width: 29.375rem;
+        z-index: 1;
+
+        ul li {
+            display: inline-block;
+            margin-right: -0.25rem;
+            padding: 0;
+            text-align: center;
+            width: 25%;
+
+            a {
+                padding: 0.5rem 0.25rem 0.25rem;
+                transition: 0.25s ease;
+
+                &:hover {
+                    transition: 0.25s ease;
+                }
+            }
+        }
+    }
+
+    //==============================
+    // PAGES
+    //==============================/
+
+    section {
+        padding: 6.5rem 1.625rem;
+    }
+
+    //==============================
+    // PAGE: INTRODUCTION;
+    //==============================/
+
+    #introduction-content {
+        margin-top: calc(40vh - 4.6875rem);
+    }
+
+    #logo {
+        width: 6.25rem;
+    }
+
+    //==============================
+    // PAGE: SKILLS;
+    //==============================/
+
+    .skills-list {
+        align-items: center;
+        flex-flow: row wrap;
+    }
+
+    .skills-list-category {
+        display: inline-block;
+        flex-grow: 1;
+        margin: 0 1rem 2.5rem;
+        padding: 1rem;
+        text-align: left;
+        width: auto;
+    }
+
+    .skills-items-container {
+        max-width: none;
+    }
+
+    //==============================
+    // PAGE: PROJECTS;
+    //==============================/
+
+    #projects-selector {
+        width: 30rem;
+
+        ul li {
+            display: inline-block;
+
+            a {
+                transition: 0.25s ease;
+
+                &:hover {
+                    transition: 0.25s ease;
+                }
+            }
+        }
+    }
+
+    .projects-img {
+        max-width: 20rem;
+    }
+
+    .projects-item {
+        margin: 0.5rem;
+    }
+
+    .projects-item-details {
+        h4 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+    }
+
+    //==============================
+    // RETURN TO TOP BUTTON
+    //==============================/
+
+    #back-to-top-button {
+        display: none;
+    }
+
+    //==============================
+    // FOOTER
+    //==============================/
+
+    footer p {
+        float: left;
+        font-size: 0.8rem;
+    }
+
+    #footer-text {
+        display: inline-block;
+    }
+
+    .vert-bar {
+        display: inline;
+        float: left;
+        margin: 0 0.0625rem;
+    }
+}
+
+//======== End of @media screen and (min-width: $break-small) ========/;
+
+//================================================================================/
+//     ========================================
+//     Screens with higher resolution than 43.75rem/700px
+//     ========================================/
+//================================================================================/
+
+@media screen and (min-width: $break-large) {
+    //==============================
+    // TEXT
+    //==============================/
+
+    h1 {
+        font-size: 2.625rem;
+        margin-top: -0.25rem;
+    }
+
+    h2 {
+        font-size: 1.1875rem;
+    }
+
+    #title {
+        margin-left: 1.75rem;
+    }
+
+    //==============================
+    // PAGES
+    //==============================/
+
+    section {
+        padding: 6.5rem 4.6875rem;
+    }
+
+    //==============================
+    // PAGE: INTRODUCTION;
+    //==============================/
+
+    #introduction {
+        width: 35.625rem;
+    }
+
+    #logo {
+        width: 7.5rem;
+    }
+
+    //==============================
+    // PAGE: SKILLS;
+    //==============================/
+
+    .skills-list-category {
+        display: inline-block;
+        margin: 0 1rem 3.125rem;
+        padding: 1rem;
+    }
+}
+
+//======== End of @media screen and (min-width: $break-large) ========/
+
+@media screen and (min-width: $content-max-width) {
+    #main-nav {
+        float: left;
+        margin-left: 59.5%;
+    }
+}
