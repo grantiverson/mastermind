@@ -31,6 +31,14 @@ const Piece = ({
                 if (row === "new") {
                     _guesses[active.row][active.column] = color;
                     setGuesses(_guesses);
+                    if (guesses[active.row].includes("0")) {
+                        setActive({
+                            column: guesses[active.row].indexOf("0"),
+                            row: active.row,
+                        });
+                    } else {
+                        setActive({ column: 0, row: active.row + 1 });
+                    }
                 } else if (
                     typeof column !== "undefined" &&
                     typeof row !== "undefined"
@@ -98,6 +106,7 @@ const Board = () => {
                         guesses={guesses}
                         key={k}
                         row="new"
+                        setActive={setActive}
                         setGuesses={setGuesses}
                     />
                 ))}
