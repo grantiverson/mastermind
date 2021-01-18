@@ -55,6 +55,18 @@
     border-radius: 50%;
 }
 
+.board__piece--active::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: calc(-0.25rem - 3px);
+    left: calc(-0.25rem - 3px);
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 3px solid blue;
+    border-radius: 50%;
+}
+
 .board__piece--red {
     border: none;
     background: radial-gradient(circle at 0.75rem 0.75rem, white, red, #000);
