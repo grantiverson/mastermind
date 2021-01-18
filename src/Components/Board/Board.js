@@ -20,7 +20,7 @@ const Piece = ({
     setActive,
     setGuesses,
 }) => {
-    const _guesses = guesses;
+    const _guesses = [...guesses];
 
     return (
         <div

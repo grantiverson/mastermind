@@ -68,31 +68,31 @@
 }
 
 .board__piece--red {
-    border: none;
+    border-color: black;
     background: radial-gradient(circle at 0.75rem 0.75rem, white, red, #000);
 }
 
 .board__piece--yellow {
-    border: none;
+    border-color: black;
     background: radial-gradient(circle at 0.75rem 0.75rem, white, yellow, #000);
 }
 
 .board__piece--green {
-    border: none;
+    border-color: black;
     background: radial-gradient(circle at 0.75rem 0.75rem, white, green, #000);
 }
 
 .board__piece--blue {
-    border: none;
+    border-color: black;
     background: radial-gradient(circle at 0.75rem 0.75rem, white, blue, #000);
 }
 
 .board__piece--black {
-    border: none;
+    border-color: black;
     background: radial-gradient(circle at 0.75rem 0.75rem, white, black, #000);
 }
 
 .board__piece--white {
-    border: none;
+    border-color: black;
     background: radial-gradient(circle at 0.75rem 0.75rem, white, white, #000);
 }
