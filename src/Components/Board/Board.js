@@ -13,17 +13,23 @@ const Hints = () => (
     </div>
 );
 
-const Guess = () => <div className="board__guess"></div>;
+const Piece = ({ color }) => (
+    <div
+        className={`board__piece${color ? ` board__piece--${color}` : ""}`}
+    ></div>
+);
 
-const Guesses = ({ num }) => (
-    <div className="board__guesses">
+const Pieces = ({ num }) => (
+    <div className="board__pieces">
         {buildArray(num).map((k) => (
-            <Guess key={k} />
+            <Piece key={k} />
         ))}
     </div>
 );
 
 const Board = () => {
+    const pieces = ["red", "yellow", "green", "blue", "black", "white"];
+
     return (
         <div className="board">
             <div className="board__score">score</div>
@@ -31,10 +37,14 @@ const Board = () => {
             {buildArray(8).map((i) => (
                 <React.Fragment key={i}>
                     <Hints />
-                    <Guesses num={4} />
+                    <Pieces num={4} />
                 </React.Fragment>
             ))}
-            <Guesses num={6} />
+            <div className="board__pieces">
+                {buildArray(pieces.length).map((k) => (
+                    <Piece key={k} color={pieces[k]} />
+                ))}
+            </div>
         </div>
     );
 };
