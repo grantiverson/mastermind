@@ -1,48 +1,105 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Board.css";
-
-const buildArray = (len) => Array.from(Array(len).keys());
 
 const Hint = () => <div className="board__hint"></div>;
 
-const Hints = () => (
+const Hints = ({ guess }) => (
     <div className="board__hints">
-        {buildArray(4).map((j) => (
-            <Hint key={j} />
+        {guess.map((piece, i) => (
+            <Hint key={i} guess={guess} />
         ))}
     </div>
 );
 
-const Piece = ({ color }) => (
-    <div
-        className={`board__piece${color ? ` board__piece--${color}` : ""}`}
-    ></div>
-);
+const Piece = ({
+    active,
+    color,
+    column,
+    guesses,
+    row,
+    setActive,
+    setGuesses,
+}) => {
+    const _guesses = guesses;
 
-const Pieces = ({ num }) => (
+    return (
+        <div
+            className={`board__piece${
+                row !== "new" && active ? ` board__piece--active` : ""
+            }${color ? ` board__piece--${color}` : ""}`}
+            onClick={() => {
+                if (row === "new") {
+                    _guesses[active.row][active.column] = color;
+                    setGuesses(_guesses);
+                } else if (
+                    typeof column !== "undefined" &&
+                    typeof row !== "undefined"
+                ) {
+                    setActive({ column, row });
+                }
+            }}
+        ></div>
+    );
+};
+
+const Pieces = ({ active, guess, guesses, row, setActive }) => (
     <div className="board__pieces">
-        {buildArray(num).map((k) => (
-            <Piece key={k} />
+        {guess.map((piece, column) => (
+            <Piece
+                active={active.row === row && active.column === column}
+                color={guesses[row][column]}
+                column={column}
+                guesses={guesses}
+                key={column}
+                row={row}
+                setActive={setActive}
+            />
         ))}
     </div>
 );
 
 const Board = () => {
-    const pieces = ["red", "yellow", "green", "blue", "black", "white"];
+    const [guesses, setGuesses] = useState([
+        ["0", "0", "0", "0"],
+        ["0", "0", "0", "0"],
+        ["0", "0", "0", "0"],
+        ["0", "0", "0", "0"],
+        ["0", "0", "0", "0"],
+        ["0", "0", "0", "0"],
+        ["0", "0", "0", "0"],
+        ["0", "0", "0", "0"],
+    ]);
+    const [active, setActive] = useState({ column: 0, row: 0 });
+    const colors = ["red", "yellow", "green", "blue", "black", "white"];
 
     return (
         <div className="board">
             <div className="board__score">score</div>
             <div className="board__solution">solution</div>
-            {buildArray(8).map((i) => (
-                <React.Fragment key={i}>
-                    <Hints />
-                    <Pieces num={4} />
-                </React.Fragment>
-            ))}
+            {guesses
+                .map((guess, row) => (
+                    <React.Fragment key={row}>
+                        <Hints guess={guess} />
+                        <Pieces
+                            active={active}
+                            guess={guess}
+                            guesses={guesses}
+                            row={row}
+                            setActive={setActive}
+                        />
+                    </React.Fragment>
+                ))
+                .reverse()}
             <div className="board__pieces">
-                {buildArray(pieces.length).map((k) => (
-                    <Piece key={k} color={pieces[k]} />
+                {Array.from(Array(colors.length).keys()).map((k) => (
+                    <Piece
+                        active={active}
+                        color={colors[k]}
+                        guesses={guesses}
+                        key={k}
+                        row="new"
+                        setGuesses={setGuesses}
+                    />
                 ))}
             </div>
         </div>
