@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./Board.css";
 
+const guessColors = ["red", "yellow", "green", "blue", "black", "white"];
 const generateSolution = () =>
     [null, null, null, null].reduce(
-        (arr) => arr.concat(colors[Math.floor(Math.random() * 6)]),
+        (arr) => arr.concat(guessColors[Math.floor(Math.random() * 6)]),
         [],
     );
-const colors = ["red", "yellow", "green", "blue", "black", "white"];
 const solution = [generateSolution()];
 
 const Hint = () => <div className="board__hint"></div>;
@@ -104,10 +104,10 @@ const Board = () => {
                 ))
                 .reverse()}
             <div className="board__pieces">
-                {Array.from(Array(colors.length).keys()).map((k) => (
+                {Array.from(Array(guessColors.length).keys()).map((k) => (
                     <Piece
                         active={active}
-                        color={colors[k]}
+                        color={guessColors[k]}
                         guesses={guesses}
                         key={k}
                         row="new"
