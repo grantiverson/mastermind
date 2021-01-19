@@ -17,7 +17,6 @@
 }
 
 .board__score,
-.board__solution,
 .board__hints,
 .board__pieces {
     height: 3rem;
@@ -35,7 +34,6 @@
     margin-right: 0.5rem;
 }
 
-.board__solution,
 .board__pieces {
     width: 20rem;
     flex-grow: 1;

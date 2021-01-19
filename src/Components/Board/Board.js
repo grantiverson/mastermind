@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import "./Board.css";
 
+const generateSolution = () =>
+    ["0", "0", "0", "0"].reduce(
+        (arr) => arr.concat(colors[Math.floor(Math.random() * 6)]),
+        [],
+    );
+const colors = ["red", "yellow", "green", "blue", "black", "white"];
+const solution = [generateSolution()];
+
 const Hint = () => <div className="board__hint"></div>;
 
 const Hints = ({ guess }) => (
@@ -31,14 +39,10 @@ const Piece = ({
                 if (row === "new") {
                     _guesses[active.row][active.column] = color;
                     setGuesses(_guesses);
-                    if (guesses[active.row].includes("0")) {
-                        setActive({
-                            column: guesses[active.row].indexOf("0"),
-                            row: active.row,
-                        });
-                    } else {
-                        setActive({ column: 0, row: active.row + 1 });
-                    }
+                    setActive({
+                        column: guesses[active.row].indexOf("0"),
+                        row: active.row,
+                    });
                 } else if (
                     typeof column !== "undefined" &&
                     typeof row !== "undefined"
@@ -54,7 +58,9 @@ const Pieces = ({ active, guess, guesses, row, setActive }) => (
     <div className="board__pieces">
         {guess.map((piece, column) => (
             <Piece
-                active={active.row === row && active.column === column}
+                active={
+                    active && active.row === row && active.column === column
+                }
                 color={guesses[row][column]}
                 column={column}
                 guesses={guesses}
@@ -78,12 +84,11 @@ const Board = () => {
         ["0", "0", "0", "0"],
     ]);
     const [active, setActive] = useState({ column: 0, row: 0 });
-    const colors = ["red", "yellow", "green", "blue", "black", "white"];
 
     return (
         <div className="board">
             <div className="board__score">score</div>
-            <div className="board__solution">solution</div>
+            <Pieces guesses={solution} guess={solution[0]} row={0} />
             {guesses
                 .map((guess, row) => (
                     <React.Fragment key={row}>
