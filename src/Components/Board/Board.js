@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Board.css";
 
 const generateSolution = () =>
-    ["0", "0", "0", "0"].reduce(
+    [null, null, null, null].reduce(
         (arr) => arr.concat(colors[Math.floor(Math.random() * 6)]),
         [],
     );
@@ -40,7 +40,7 @@ const Piece = ({
                     _guesses[active.row][active.column] = color;
                     setGuesses(_guesses);
                     setActive({
-                        column: guesses[active.row].indexOf("0"),
+                        column: guesses[active.row].indexOf(null),
                         row: active.row,
                     });
                 } else if (
@@ -74,14 +74,14 @@ const Pieces = ({ active, guess, guesses, row, setActive }) => (
 
 const Board = () => {
     const [guesses, setGuesses] = useState([
-        ["0", "0", "0", "0"],
-        ["0", "0", "0", "0"],
-        ["0", "0", "0", "0"],
-        ["0", "0", "0", "0"],
-        ["0", "0", "0", "0"],
-        ["0", "0", "0", "0"],
-        ["0", "0", "0", "0"],
-        ["0", "0", "0", "0"],
+        [null, null, null, null],
+        [null, null, null, null],
+        [null, null, null, null],
+        [null, null, null, null],
+        [null, null, null, null],
+        [null, null, null, null],
+        [null, null, null, null],
+        [null, null, null, null],
     ]);
     const [active, setActive] = useState({ column: 0, row: 0 });
 
