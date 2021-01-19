@@ -46,6 +46,16 @@
     border-radius: 50%;
 }
 
+.board__hint--black {
+    border-color: black;
+    background: radial-gradient(circle at 0.75rem 0.75rem, white, black, #000);
+}
+
+.board__hint--white {
+    border-color: white;
+    background: radial-gradient(circle at 0.75rem 0.75rem, white, white, #000);
+}
+
 .board__piece {
     width: 2rem;
     height: 2rem;

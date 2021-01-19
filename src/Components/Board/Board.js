@@ -9,15 +9,53 @@ const generateSolution = () =>
     );
 const solution = [generateSolution()];
 
-const Hint = () => <div className="board__hint"></div>;
-
-const Hints = ({ guess }) => (
-    <div className="board__hints">
-        {guess.map((piece, i) => (
-            <Hint key={i} guess={guess} />
-        ))}
-    </div>
+const Hint = ({ hintColor }) => (
+    <div
+        className={`board__hint${
+            hintColor ? ` board__hint--${hintColor}` : ""
+        }`}
+    ></div>
 );
+
+const Hints = ({ guess }) => {
+    const _solution = [...solution[0]];
+    const rightPlace = guess.reduce((arr, piece, i) => {
+        if (_solution[i] === piece) {
+            _solution[i] = 0;
+            return arr.concat(2);
+        } else {
+            return arr.concat(0);
+        }
+    }, []);
+    const rightColor = guess.reduce((arr, piece) => {
+        if (_solution.includes(piece)) {
+            _solution[_solution.indexOf(piece)] = 0;
+            return arr.concat(1);
+        } else {
+            return arr.concat(0);
+        }
+    }, []);
+    const hints =
+        guess.filter((piece) => piece !== null).length === 4
+            ? rightPlace
+                  .reduce(
+                      (arr, x, i) =>
+                          x ? arr.concat(x) : arr.concat(rightColor[i]),
+                      [],
+                  )
+                  .sort()
+                  .reverse()
+            : [];
+    const hintColors = { 1: "white", 2: "black" };
+
+    return (
+        <div className="board__hints">
+            {guess.map((piece, i) => (
+                <Hint key={i} hintColor={hintColors[hints[i]]} />
+            ))}
+        </div>
+    );
+};
 
 const Piece = ({
     active,
