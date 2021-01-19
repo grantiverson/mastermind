@@ -77,10 +77,21 @@ const Piece = ({
                 if (row === "new") {
                     _guesses[active.row][active.column] = color;
                     setGuesses(_guesses);
-                    setActive({
-                        column: guesses[active.row].indexOf(null),
-                        row: active.row,
-                    });
+
+                    if (
+                        _guesses[active.row].filter((piece) => piece !== null)
+                            .length === 4
+                    ) {
+                        setActive({
+                            column: 0,
+                            row: active.row + 1,
+                        });
+                    } else {
+                        setActive({
+                            column: guesses[active.row].indexOf(null),
+                            row: active.row,
+                        });
+                    }
                 } else if (
                     typeof column !== "undefined" &&
                     typeof row !== "undefined"
