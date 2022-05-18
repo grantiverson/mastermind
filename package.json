@@ -14,11 +14,14 @@
         "web-vitals": "^2.1.4"
     },
     "scripts": {
-        "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test",
+        "deploy": "firebase deploy --only hosting",
         "eject": "react-scripts eject",
-        "predeploy": "npm run build"
+        "format": "prettier --check",
+        "predeploy": "npm run build",
+        "start": "react-scripts start",
+        "test": "react-scripts test",
+        "test:coverage": "CI=true npm test -- --env=jsdom --coverage"
     },
     "eslintConfig": {
         "extends": [
