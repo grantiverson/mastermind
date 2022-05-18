@@ -17,9 +17,11 @@
         "build": "react-scripts build",
         "deploy": "firebase deploy --only hosting",
         "eject": "react-scripts eject",
+        "format": "prettier --check",
         "predeploy": "npm run build",
         "start": "react-scripts start",
         "test": "react-scripts test",
+        "test:coverage": "CI=true npm test -- --env=jsdom --coverage"
     },
     "eslintConfig": {
         "extends": [
