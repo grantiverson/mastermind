@@ -14,8 +14,10 @@
     },
     "scripts": {
         "build": "react-scripts build",
+        "deploy": "gh-pages -d build",
         "eject": "react-scripts eject",
         "format": "prettier --check",
+        "predeploy": "npm run build",
         "start": "react-scripts start",
         "test": "react-scripts test"
     },
