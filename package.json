@@ -15,6 +15,7 @@
     },
     "scripts": {
         "build": "react-scripts build",
+        "deploy": "firebase deploy --only hosting",
         "eject": "react-scripts eject",
         "predeploy": "npm run build",
         "start": "react-scripts start",
