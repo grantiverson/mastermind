@@ -5,7 +5,7 @@
     "private": false,
     "dependencies": {
         "@testing-library/jest-dom": "^5.16.2",
-        "@testing-library/react": "^12.1.4",
+        "@testing-library/react": "^12.1.5",
         "@testing-library/user-event": "^13.5.0",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
