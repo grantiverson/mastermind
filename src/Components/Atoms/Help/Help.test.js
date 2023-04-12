@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import Help from ".";
 
@@ -8,5 +8,9 @@ describe(`<Help />`, () => {
         render(<Help />);
 
         expect(document.querySelector(".help")).toBeInTheDocument();
+        expect(document.querySelector("svg")).toHaveClass(
+            "svg-inline--fa fa-question",
+        );
+        expect(screen.queryByRole("tooltip")).toBeNull();
     });
 });
