@@ -1,0 +1,52 @@
+.pieces {
+    position: relative;
+    height: 3rem;
+    border: 1px solid #664229;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20rem;
+    flex-grow: 1;
+}
+
+.hide-solution {
+    display: none;
+}
+
+.row--solution .hide-solution {
+    position: absolute;
+    display: block;
+    border-radius: 4px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+            45deg,
+            #d7bd8f 12%,
+            transparent 0,
+            transparent 88%,
+            #d7bd8f 0
+        ),
+        linear-gradient(
+            135deg,
+            transparent 37%,
+            #c1aa80 0,
+            #c1aa80 63%,
+            transparent 0
+        ),
+        linear-gradient(
+                45deg,
+                transparent 37%,
+                #d7bd8f 0,
+                #d7bd8f 63%,
+                transparent 0
+            )
+            #ac9772;
+    background-size: 25px 25px;
+}
+
+.board--is-solved .row--solution .hide-solution {
+    display: none;
+}

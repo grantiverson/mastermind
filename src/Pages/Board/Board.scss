@@ -1,0 +1,17 @@
+.board {
+    width: 26rem;
+    height: 50rem;
+    padding: 1rem;
+    border: 1px solid #664229;
+    border-radius: 15px;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    background-color: #d7bd8f;
+}

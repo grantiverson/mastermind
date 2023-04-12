@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+if [ -z "$(git status --short)" ]; then
+    echo '\033[32mWorking tree clean!\033[0m'
+    yarn test
+else
+    echo '\033[31mError: working tree not clean\033[0m'
+    echo $(git status --short)
+    echo ''
+
+    exit 1
+fi
+

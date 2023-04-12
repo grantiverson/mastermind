@@ -1,14 +1,18 @@
-import Board from "./Components/Board/Board";
+import React from "react";
+import { Provider } from "react-redux";
 
+import store from "./redux";
+import Board from "./Pages";
+
+import "./App.scss";
 import "./normalize.css";
-import "./App.css";
 
-const App = () => {
-    return (
-        <div className="App">
+const App = () => (
+    <Provider {...{ store }}>
+        <div className="app">
             <Board />
         </div>
-    );
-};
+    </Provider>
+);
 
 export default App;

@@ -1,0 +1,21 @@
+.help {
+    height: 3rem;
+    border: 1px solid #664229;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 3rem;
+    margin-right: 0.5rem;
+    color: #664229;
+
+    &__tooltip {
+        max-width: 300px;
+        z-index: 9999;
+    }
+}
+
+:root {
+    --rt-color-dark: #281a10;
+    --rt-opacity: 1;
+}
