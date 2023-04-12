@@ -1,0 +1,53 @@
+.piece {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #664229;
+    border-radius: 50%;
+    background: radial-gradient(circle at 1.25rem 1.25rem, #d7bd8f, #66422999);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--active::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 2.5rem;
+        height: 2.5rem;
+        border: 3px solid blue;
+        border-radius: 50%;
+    }
+
+    $gradientType: circle at 0.75rem 0.75rem;
+
+    &--red {
+        border-color: black;
+        background: radial-gradient($gradientType, white, red, #000);
+    }
+
+    &--yellow {
+        border-color: black;
+        background: radial-gradient($gradientType, white, yellow, #000);
+    }
+
+    &--green {
+        border-color: black;
+        background: radial-gradient($gradientType, white, green, #000);
+    }
+
+    &--blue {
+        border-color: black;
+        background: radial-gradient($gradientType, white, blue, #000);
+    }
+
+    &--black {
+        border-color: black;
+        background: radial-gradient($gradientType, white, black, #000);
+    }
+
+    &--white {
+        border-color: black;
+        background: radial-gradient($gradientType, white, white, #000);
+    }
+}
