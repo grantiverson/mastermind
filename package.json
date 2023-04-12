@@ -1,6 +1,7 @@
 {
     "name": "@iverson/mastermind",
     "version": "0.1.0",
+    "homepage": "https://grantiverson.github.io/mastermind",
     "license": "UNLICENSED",
     "files": [
         "build"
@@ -11,6 +12,7 @@
         "eject": "react-scripts eject",
         "format": "prettier --check . --ignore-path '.prettierignore'",
         "lint": "eslint --ext .js --config .eslintrc.js",
+        "predeploy": "npm run build",
         "start": "react-scripts start",
         "storybook": "npx start-storybook -p 6001",
         "test": "jest",
