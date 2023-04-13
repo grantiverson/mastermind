@@ -2027,7 +2027,7 @@ __metadata:
     "@storybook/addon-essentials": ^6.5.16
     "@storybook/addon-styling": ^0.3.2
     "@storybook/addons": ^6.5.16
-    "@storybook/api": ^6.5.16
+    "@storybook/api": ^7.0.4
     "@storybook/builder-webpack5": ^6.5.16
     "@storybook/components": ^6.5.16
     "@storybook/core-events": ^6.5.16
@@ -3312,7 +3312,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/api@npm:6.5.16, @storybook/api@npm:^6.5.16":
+"@storybook/api@npm:6.5.16":
   version: 6.5.16
   resolution: "@storybook/api@npm:6.5.16"
   dependencies:
@@ -3337,6 +3337,24 @@ __metadata:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
   checksum: c873189ac1e501825d647903baa125899c492cee962cb86ebb7455110bd09194eeb6943f5c58a1f808ce4ee2e20e305f5604a4e60b07003c82a6fc6ceaee5ea9
+  languageName: node
+  linkType: hard
+
+"@storybook/api@npm:^7.0.4":
+  version: 7.0.4
+  resolution: "@storybook/api@npm:7.0.4"
+  dependencies:
+    "@storybook/client-logger": 7.0.4
+    "@storybook/manager-api": 7.0.4
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 985e00d8208c5effedd3cb496adedcf1fc4dba5cefbb0e4861a599ab16c5896d4c22ec657d1e2951538bae3ac003b652b6fc511b3bd166ae29e588242c6cf47b
   languageName: node
   linkType: hard
 
@@ -3847,7 +3865,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/manager-api@npm:^7.0.0-alpha.54":
+"@storybook/manager-api@npm:7.0.4, @storybook/manager-api@npm:^7.0.0-alpha.54":
   version: 7.0.4
   resolution: "@storybook/manager-api@npm:7.0.4"
   dependencies:
