@@ -33,7 +33,7 @@
     "devDependencies": {
         "@babel/core": "^7.21.3",
         "@storybook/addon-essentials": "^6.5.16",
-        "@storybook/addon-styling": "^0.3.2",
+        "@storybook/addon-styling": "^1.0.8",
         "@storybook/addons": "^6.5.16",
         "@storybook/api": "^6.5.16",
         "@storybook/builder-webpack5": "^6.5.16",
