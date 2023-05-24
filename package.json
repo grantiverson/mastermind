@@ -36,7 +36,7 @@
         "@storybook/addon-styling": "^0.3.2",
         "@storybook/addons": "^6.5.16",
         "@storybook/api": "^6.5.16",
-        "@storybook/builder-webpack5": "^6.5.16",
+        "@storybook/builder-webpack5": "^7.0.17",
         "@storybook/components": "^6.5.16",
         "@storybook/core-events": "^6.5.16",
         "@storybook/manager-api": "^7.0.0-alpha.54",
